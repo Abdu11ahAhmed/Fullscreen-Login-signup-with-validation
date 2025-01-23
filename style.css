@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-family: "Averta";
+  letter-spacing: -0.05em;
+  font-weight: 600;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+@font-face {
+  font-family: "Averta";
+  src: url("./fonts/Averta-Regular.ttf");
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: white;
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  opacity: 0;
+  animation: body 0.5s linear forwards;
+  animation-delay: 0.3s;
+}
+@keyframes body {
+  to {
+    opacity: 1;
+  }
+}
+.left {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.left .left-image,
+.left .right-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  pointer-events: pointer;
+  user-select: none;
+}
+.right {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.right h1 {
+  text-align: center;
+  padding: 50px 0px;
+  font-size: 20px;
+}
+.right form {
+  width: 30vw;
+}
+.right form .err {
+  border: 1px solid red;
+  height: 40px;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 0, 0, 0.329);
+  color: red;
+  display: none;
+}
+.right form .err.active {
+  border: 1px solid #00ff73;
+  height: 40px;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 255, 55, 0.342);
+  color: #00b517;
+  display: none;
+}
+.right input {
+  display: block;
+  height: 40px;
+  width: 100%;
+  margin: 20px 0px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid gray;
+  text-transform: none;
+  font-size: 16px;
+}
+.right button {
+  display: block;
+  height: 40px;
+  width: 100%;
+  margin: 20px 0px;
+  outline: none;
+  border: none;
+  text-transform: none;
+  font-size: 15px;
+}
+.right button:hover {
+  background: #e0e0e0;
+}
+.right button:active {
+  background: #cfcfcf;
+}
+a {
+  font-size: 14px;
+}
+@media screen and (max-width: 1024px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .left {
+    display: none;
+  }
+  .right h1 {
+    padding: 20px 0;
+  }
+  .right {
+    height: 100vh;
+  }
+  .right form {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .right form {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
